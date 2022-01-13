@@ -29,7 +29,11 @@ class DriverCreate(generics.CreateAPIView):
     serializer_class = DriverSerializer  
     queryset = Driver.objects.all()
 
-class DriverUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
+class DriverUpdate(generics.RetrieveUpdateAPIView):
+    serializer_class = DriverSerializer
+    queryset = Driver.objects.all()
+
+class DriverDetailDelete(generics.RetrieveDestroyAPIView):
     serializer_class = DriverSerializer
     queryset = Driver.objects.all()
 
@@ -41,6 +45,10 @@ class ClientCreate(generics.CreateAPIView):
     serializer_class = ClientSerializer  
     queryset = Order.objects.all()
 
-class ClientUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
+class ClientUpdate(generics.RetrieveUpdateAPIView):
+    serializer_class = ClientSerializer
+    queryset = Client.objects.all()
+
+class ClientDetailDelete(generics.RetrieveDestroyAPIView):
     serializer_class = ClientSerializer
     queryset = Client.objects.all()

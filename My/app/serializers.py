@@ -16,4 +16,4 @@ class DriverSerializer(ModelSerializer):
 class OrderSerializer(ModelSerializer):
     class Meta:
         model = Order
-        fields = ['id', 'driver', 'client', 'created', 'updated']
+        fields = ['id', 'driver', 'client', 'status', 'created', 'updated']

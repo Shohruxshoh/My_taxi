@@ -25,8 +25,17 @@ class Client(models.Model):
 
 
 class Order(models.Model):
+
+    STATUS = (
+        ('CREATED', 'CREATED'),
+        ('CANCELLED', 'CANCELLED'),
+        ('ACCEPTED', 'ACCEPTED'),
+        ('FINISHED', 'FINISHED'),
+
+    )
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE, related_name='driver')
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='client')
+    status = models.CharField(max_length=10, choices=STATUS)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
